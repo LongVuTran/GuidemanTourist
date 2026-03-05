@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="GuidemanTourist – Your trusted travel guide for amazing destinations around the world." />
+  <title>GuidemanTourist – Explore the World</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════ NAVBAR ═══════════════════════════ -->
+  <header class="navbar" id="navbar">
+    <div class="container navbar__inner">
+      <a href="#" class="navbar__logo">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <circle cx="16" cy="16" r="16" fill="#2a9d8f"/>
+          <path d="M16 7C11.03 7 7 11.03 7 16s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9zm0 2c.96 0 1.88.17 2.74.48L10.48 17.74A6.96 6.96 0 0 1 9 16c0-3.86 3.14-7 7-7zm0 14c-.96 0-1.88-.17-2.74-.48l8.26-8.26c.31.86.48 1.78.48 2.74 0 3.86-3.14 7-7 7z" fill="white"/>
+        </svg>
+        <span>GuidemanTourist</span>
+      </a>
+
+      <nav class="navbar__nav" id="navMenu" aria-label="Main navigation">
+        <a href="#destinations">Destinations</a>
+        <a href="#features">Features</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#testimonials">Reviews</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="navbar__actions">
+        <a href="#contact" class="btn btn--primary btn--sm">Get Started</a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════ HERO ════════════════════════════ -->
+  <section class="hero" id="hero">
+    <div class="hero__bg">
+      <svg viewBox="0 0 1440 800" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" style="stop-color:#0a1628"/>
+            <stop offset="60%" style="stop-color:#1a3a5c"/>
+            <stop offset="100%" style="stop-color:#2a9d8f"/>
+          </linearGradient>
+          <linearGradient id="waterGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" style="stop-color:#2a9d8f;stop-opacity:0.8"/>
+            <stop offset="100%" style="stop-color:#1a6b6b"/>
+          </linearGradient>
+        </defs>
+        <!-- Sky -->
+        <rect width="1440" height="800" fill="url(#skyGrad)"/>
+        <!-- Stars -->
+        <g fill="white" opacity="0.6">
+          <circle cx="100" cy="60" r="1.5"/><circle cx="200" cy="30" r="1"/><circle cx="350" cy="80" r="1.5"/>
+          <circle cx="500" cy="20" r="1"/><circle cx="650" cy="55" r="2"/><circle cx="800" cy="35" r="1.5"/>
+          <circle cx="950" cy="70" r="1"/><circle cx="1100" cy="25" r="1.5"/><circle cx="1250" cy="60" r="1"/>
+          <circle cx="1380" cy="40" r="2"/><circle cx="150" cy="120" r="1"/><circle cx="420" cy="140" r="1.5"/>
+          <circle cx="700" cy="110" r="1"/><circle cx="900" cy="130" r="1.5"/><circle cx="1200" cy="100" r="1"/>
+        </g>
+        <!-- Moon -->
+        <circle cx="1300" cy="100" r="40" fill="#f4d03f" opacity="0.9"/>
+        <circle cx="1315" cy="90" r="35" fill="#1a3a5c"/>
+        <!-- Mountains -->
+        <polygon points="0,600 200,300 400,600" fill="#0d2137" opacity="0.9"/>
+        <polygon points="150,600 380,250 610,600" fill="#112b45" opacity="0.8"/>
+        <polygon points="400,600 600,320 800,600" fill="#0d2137" opacity="0.9"/>
+        <polygon points="600,600 830,270 1060,600" fill="#112b45" opacity="0.85"/>
+        <polygon points="900,600 1100,300 1300,600" fill="#0d2137" opacity="0.9"/>
+        <polygon points="1100,600 1300,310 1500,600" fill="#0a1e33" opacity="0.95"/>
+        <!-- Snow caps -->
+        <polygon points="200,300 215,330 185,330" fill="white" opacity="0.9"/>
+        <polygon points="380,250 400,285 360,285" fill="white" opacity="0.9"/>
+        <polygon points="600,320 618,352 582,352" fill="white" opacity="0.9"/>
+        <polygon points="830,270 850,305 810,305" fill="white" opacity="0.9"/>
+        <polygon points="1100,300 1118,332 1082,332" fill="white" opacity="0.9"/>
+        <polygon points="1300,310 1318,342 1282,342" fill="white" opacity="0.9"/>
+        <!-- Water / Reflection -->
+        <rect x="0" y="600" width="1440" height="200" fill="url(#waterGrad)"/>
+        <!-- Reflection ripples -->
+        <ellipse cx="400" cy="650" rx="200" ry="10" fill="white" opacity="0.08"/>
+        <ellipse cx="900" cy="680" rx="300" ry="8" fill="white" opacity="0.06"/>
+        <ellipse cx="200" cy="700" rx="150" ry="6" fill="white" opacity="0.05"/>
+        <!-- Foreground silhouettes (trees / land) -->
+        <rect x="0" y="700" width="1440" height="100" fill="#061020"/>
+        <!-- Tree silhouettes -->
+        <polygon points="50,700 65,640 80,700" fill="#061020"/>
+        <polygon points="120,700 138,620 156,700" fill="#080f1e"/>
+        <polygon points="1300,700 1318,630 1336,700" fill="#061020"/>
+        <polygon points="1380,700 1396,650 1412,700" fill="#080f1e"/>
+      </svg>
+    </div>
+
+    <div class="container hero__content">
+      <p class="hero__eyebrow">Your Trusted Travel Guide</p>
+      <h1 class="hero__title">Explore the World<br/>with <span class="highlight">Confidence</span></h1>
+      <p class="hero__subtitle">
+        Discover breathtaking destinations, connect with expert local guides,
+        and create memories that last a lifetime.
+      </p>
+      <div class="hero__cta">
+        <a href="#destinations" class="btn btn--primary btn--lg">Explore Destinations</a>
+        <a href="#how-it-works" class="btn btn--ghost btn--lg">How It Works</a>
+      </div>
+      <div class="hero__stats">
+        <div class="stat"><span class="stat__number">500+</span><span class="stat__label">Destinations</span></div>
+        <div class="stat__divider"></div>
+        <div class="stat"><span class="stat__number">2 000+</span><span class="stat__label">Local Guides</span></div>
+        <div class="stat__divider"></div>
+        <div class="stat"><span class="stat__number">50k+</span><span class="stat__label">Happy Travelers</span></div>
+      </div>
+    </div>
+
+    <a href="#destinations" class="hero__scroll" aria-label="Scroll down">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M12 5v14M5 12l7 7 7-7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </section>
+
+  <!-- ══════════════════════ SEARCH BAR ════════════════════════ -->
+  <section class="search-bar">
+    <div class="container">
+      <form class="search-form" role="search" id="searchForm">
+        <div class="search-field">
+          <label for="searchDestination">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="#2a9d8f"/>
+            </svg>
+            Destination
+          </label>
+          <input type="text" id="searchDestination" placeholder="Where do you want to go?" />
+        </div>
+        <div class="search-field">
+          <label for="searchDate">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <rect x="3" y="4" width="18" height="18" rx="2" stroke="#2a9d8f" stroke-width="2"/>
+              <path d="M16 2v4M8 2v4M3 10h18" stroke="#2a9d8f" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            Travel Date
+          </label>
+          <input type="date" id="searchDate" />
+        </div>
+        <div class="search-field">
+          <label for="searchGuests">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="#2a9d8f" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="9" cy="7" r="4" stroke="#2a9d8f" stroke-width="2"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" stroke="#2a9d8f" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            Guests
+          </label>
+          <input type="number" id="searchGuests" placeholder="Travelers" min="1" max="20" />
+        </div>
+        <button type="submit" class="btn btn--primary search-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="11" cy="11" r="8" stroke="white" stroke-width="2"/>
+            <path d="M21 21l-4.35-4.35" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          Search
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ FEATURES ════════════════════════ -->
+  <section class="features section" id="features">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">Why Choose Us</p>
+        <h2 class="section-title">Everything You Need for the Perfect Trip</h2>
+        <p class="section-desc">From planning to arrival, we've got every step of your journey covered.</p>
+      </div>
+      <div class="features__grid">
+        <div class="feature-card" data-aos>
+          <div class="feature-card__icon" style="--icon-color:#2a9d8f">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor"/>
+            </svg>
+          </div>
+          <h3>Expert Local Guides</h3>
+          <p>Connect with verified, passionate locals who know every hidden gem in their city.</p>
+        </div>
+        <div class="feature-card" data-aos>
+          <div class="feature-card__icon" style="--icon-color:#e76f51">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" fill="currentColor"/>
+            </svg>
+          </div>
+          <h3>Safe &amp; Trusted</h3>
+          <p>Every guide is background-checked and every trip is fully insured for your peace of mind.</p>
+        </div>
+        <div class="feature-card" data-aos>
+          <div class="feature-card__icon" style="--icon-color:#f4a261">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.2"/>
+              <path d="M12 6v6l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Real-Time Support</h3>
+          <p>Our support team is available 24/7 to assist you before, during, and after your trip.</p>
+        </div>
+        <div class="feature-card" data-aos>
+          <div class="feature-card__icon" style="--icon-color:#457b9d">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" fill="currentColor"/>
+            </svg>
+          </div>
+          <h3>Custom Itineraries</h3>
+          <p>Tailor every detail of your trip — from transportation to dining — to suit your style.</p>
+        </div>
+        <div class="feature-card" data-aos>
+          <div class="feature-card__icon" style="--icon-color:#2a9d8f">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="currentColor"/>
+            </svg>
+          </div>
+          <h3>Top-Rated Experiences</h3>
+          <p>Browse thousands of reviews to find the highest-rated tours and activities anywhere.</p>
+        </div>
+        <div class="feature-card" data-aos>
+          <div class="feature-card__icon" style="--icon-color:#e76f51">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <rect x="1" y="4" width="22" height="16" rx="2" fill="currentColor" opacity="0.2"/>
+              <path d="M1 10h22" stroke="currentColor" stroke-width="2"/>
+              <path d="M7 15h2M11 15h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Best Price Guarantee</h3>
+          <p>We match any lower price you find, so you always get the best value for your money.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════ DESTINATIONS ═══════════════════════ -->
+  <section class="destinations section" id="destinations">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">Popular Destinations</p>
+        <h2 class="section-title">Where Will You Go Next?</h2>
+        <p class="section-desc">Hand-picked destinations loved by thousands of travelers every year.</p>
+      </div>
+
+      <div class="destinations__tabs" role="tablist" aria-label="Destination categories">
+        <button class="tab active" role="tab" aria-selected="true" data-filter="all">All</button>
+        <button class="tab" role="tab" aria-selected="false" data-filter="asia">Asia</button>
+        <button class="tab" role="tab" aria-selected="false" data-filter="europe">Europe</button>
+        <button class="tab" role="tab" aria-selected="false" data-filter="americas">Americas</button>
+      </div>
+
+      <div class="destinations__grid" id="destinationsGrid">
+
+        <!-- Asia -->
+        <article class="dest-card" data-category="asia">
+          <div class="dest-card__img">
+            <svg viewBox="0 0 400 260" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="400" height="260" fill="#1a6b6b"/>
+              <rect x="0" y="150" width="400" height="110" fill="#0d4444"/>
+              <!-- Angkor Wat simplified -->
+              <rect x="60" y="100" width="280" height="100" fill="#8b6914"/>
+              <polygon points="155,100 175,60 195,100" fill="#a07820"/>
+              <polygon points="185,100 200,50 215,100" fill="#a07820"/>
+              <polygon points="205,100 225,60 245,100" fill="#a07820"/>
+              <rect x="100" y="130" width="50" height="70" fill="#6b4f10"/>
+              <rect x="250" y="130" width="50" height="70" fill="#6b4f10"/>
+              <rect x="175" y="110" width="50" height="90" fill="#7a5a14"/>
+              <!-- Water reflection -->
+              <rect x="80" y="210" width="240" height="20" fill="#2a9d8f" opacity="0.4"/>
+              <!-- Palm trees -->
+              <rect x="30" y="120" width="6" height="80" fill="#5a3e10"/>
+              <ellipse cx="33" cy="115" rx="22" ry="14" fill="#2d6a2d"/>
+              <rect x="360" y="130" width="6" height="70" fill="#5a3e10"/>
+              <ellipse cx="363" cy="125" rx="20" ry="13" fill="#2d6a2d"/>
+              <!-- Sky gradient -->
+              <rect width="400" height="100" fill="none"/>
+              <defs>
+                <linearGradient id="sky1" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#ff7043" stop-opacity="0.7"/>
+                  <stop offset="100%" stop-color="#ffb74d" stop-opacity="0.3"/>
+                </linearGradient>
+              </defs>
+              <rect width="400" height="100" fill="url(#sky1)"/>
+            </svg>
+            <span class="dest-card__badge">Asia</span>
+          </div>
+          <div class="dest-card__body">
+            <h3 class="dest-card__title">Siem Reap, Cambodia</h3>
+            <p class="dest-card__meta">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" fill="#2a9d8f"/></svg>
+              Angkor Wat · Temples · History
+            </p>
+            <p class="dest-card__desc">Home to the iconic Angkor Wat temple complex, Siem Reap is a window into the ancient Khmer Empire.</p>
+            <div class="dest-card__footer">
+              <span class="dest-card__price">From <strong>$299</strong></span>
+              <a href="#contact" class="btn btn--outline btn--sm">Book Now</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Europe -->
+        <article class="dest-card" data-category="europe">
+          <div class="dest-card__img">
+            <svg viewBox="0 0 400 260" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <defs>
+                <linearGradient id="skyParis" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#87ceeb"/>
+                  <stop offset="100%" stop-color="#e0f0ff"/>
+                </linearGradient>
+              </defs>
+              <rect width="400" height="260" fill="url(#skyParis)"/>
+              <!-- Ground -->
+              <rect x="0" y="200" width="400" height="60" fill="#5a8a40"/>
+              <!-- Eiffel Tower -->
+              <polygon points="180,50 190,200 210,200 220,50" fill="#555" opacity="0.85"/>
+              <polygon points="183,50 196,120 204,120 217,50" fill="#666"/>
+              <rect x="182" y="120" width="36" height="6" fill="#444"/>
+              <rect x="186" y="80" width="28" height="5" fill="#444"/>
+              <line x1="200" y1="50" x2="200" y2="30" stroke="#333" stroke-width="2"/>
+              <!-- Buildings -->
+              <rect x="20" y="150" width="60" height="80" fill="#c9b89a"/>
+              <rect x="90" y="160" width="50" height="70" fill="#d4c4a8"/>
+              <rect x="250" y="155" width="70" height="75" fill="#c9b89a"/>
+              <rect x="330" y="165" width="55" height="65" fill="#d4c4a8"/>
+              <!-- Windows -->
+              <rect x="30" y="160" width="8" height="8" fill="#a0c8e8"/>
+              <rect x="50" y="160" width="8" height="8" fill="#a0c8e8"/>
+              <rect x="30" y="180" width="8" height="8" fill="#a0c8e8"/>
+              <rect x="50" y="180" width="8" height="8" fill="#a0c8e8"/>
+              <!-- Clouds -->
+              <ellipse cx="80" cy="50" rx="40" ry="18" fill="white" opacity="0.9"/>
+              <ellipse cx="110" cy="45" rx="30" ry="15" fill="white" opacity="0.9"/>
+              <ellipse cx="320" cy="60" rx="35" ry="16" fill="white" opacity="0.9"/>
+              <ellipse cx="350" cy="55" rx="28" ry="13" fill="white" opacity="0.9"/>
+            </svg>
+            <span class="dest-card__badge">Europe</span>
+          </div>
+          <div class="dest-card__body">
+            <h3 class="dest-card__title">Paris, France</h3>
+            <p class="dest-card__meta">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" fill="#2a9d8f"/></svg>
+              Eiffel Tower · Art · Culture
+            </p>
+            <p class="dest-card__desc">The City of Light never fails to enchant — from world-class cuisine to iconic landmarks.</p>
+            <div class="dest-card__footer">
+              <span class="dest-card__price">From <strong>$699</strong></span>
+              <a href="#contact" class="btn btn--outline btn--sm">Book Now</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Americas -->
+        <article class="dest-card" data-category="americas">
+          <div class="dest-card__img">
+            <svg viewBox="0 0 400 260" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <defs>
+                <linearGradient id="skyMachu" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#3a6186"/>
+                  <stop offset="100%" stop-color="#89f7fe" stop-opacity="0.5"/>
+                </linearGradient>
+              </defs>
+              <rect width="400" height="260" fill="url(#skyMachu)"/>
+              <!-- Mountains -->
+              <polygon points="-10,260 80,80 200,260" fill="#2d5a1b"/>
+              <polygon points="100,260 220,60 360,260" fill="#3a7a25"/>
+              <polygon points="250,260 350,100 460,260" fill="#2d5a1b"/>
+              <!-- Machu Picchu ruins (simplified) -->
+              <rect x="100" y="160" width="200" height="60" fill="#8b7355"/>
+              <rect x="110" y="140" width="30" height="40" fill="#a08060"/>
+              <rect x="150" y="145" width="25" height="35" fill="#a08060"/>
+              <rect x="185" y="138" width="35" height="42" fill="#9a7a50"/>
+              <rect x="230" y="143" width="28" height="37" fill="#a08060"/>
+              <rect x="268" y="148" width="25" height="32" fill="#a08060"/>
+              <!-- Terraces -->
+              <rect x="70" y="200" width="260" height="8" fill="#6b8c40"/>
+              <rect x="85" y="215" width="230" height="8" fill="#5a7a35"/>
+              <!-- Mist -->
+              <ellipse cx="200" cy="130" rx="300" ry="40" fill="white" opacity="0.15"/>
+              <!-- Cloud -->
+              <ellipse cx="60" cy="50" rx="50" ry="20" fill="white" opacity="0.8"/>
+              <ellipse cx="330" cy="40" rx="55" ry="22" fill="white" opacity="0.8"/>
+            </svg>
+            <span class="dest-card__badge">Americas</span>
+          </div>
+          <div class="dest-card__body">
+            <h3 class="dest-card__title">Machu Picchu, Peru</h3>
+            <p class="dest-card__meta">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" fill="#2a9d8f"/></svg>
+              Inca Empire · Trekking · Nature
+            </p>
+            <p class="dest-card__desc">The mystical Inca citadel nestled in the Andes. A UNESCO World Heritage Site unlike any other.</p>
+            <div class="dest-card__footer">
+              <span class="dest-card__price">From <strong>$499</strong></span>
+              <a href="#contact" class="btn btn--outline btn--sm">Book Now</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Asia -->
+        <article class="dest-card" data-category="asia">
+          <div class="dest-card__img">
+            <svg viewBox="0 0 400 260" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <defs>
+                <linearGradient id="skyTokyo" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#ff9a9e" stop-opacity="0.6"/>
+                  <stop offset="100%" stop-color="#fad0c4" stop-opacity="0.3"/>
+                </linearGradient>
+              </defs>
+              <rect width="400" height="260" fill="#e8d5c4"/>
+              <rect width="400" height="260" fill="url(#skyTokyo)"/>
+              <!-- Mt Fuji -->
+              <polygon points="200,30 290,180 110,180" fill="white"/>
+              <polygon points="200,30 230,100 170,100" fill="white"/>
+              <polygon points="200,30 260,160 140,160" fill="#a0b8c8"/>
+              <polygon points="200,30 220,70 180,70" fill="white"/>
+              <!-- Ground -->
+              <rect x="0" y="180" width="400" height="80" fill="#6b9e50"/>
+              <!-- Cherry blossoms trees -->
+              <rect x="40" y="140" width="8" height="60" fill="#8b5e3c"/>
+              <ellipse cx="44" cy="130" rx="30" ry="25" fill="#ffb7c5" opacity="0.9"/>
+              <ellipse cx="55" cy="125" rx="25" ry="20" fill="#ff9db5" opacity="0.8"/>
+              <rect x="340" y="140" width="8" height="60" fill="#8b5e3c"/>
+              <ellipse cx="344" cy="130" rx="30" ry="25" fill="#ffb7c5" opacity="0.9"/>
+              <ellipse cx="330" cy="125" rx="25" ry="20" fill="#ff9db5" opacity="0.8"/>
+              <!-- Falling petals -->
+              <ellipse cx="120" cy="170" rx="4" ry="2" fill="#ffb7c5" opacity="0.7" transform="rotate(-30 120 170)"/>
+              <ellipse cx="200" cy="155" rx="4" ry="2" fill="#ff9db5" opacity="0.7" transform="rotate(20 200 155)"/>
+              <ellipse cx="280" cy="165" rx="4" ry="2" fill="#ffb7c5" opacity="0.7" transform="rotate(-10 280 165)"/>
+              <!-- Pagoda -->
+              <rect x="165" y="155" width="70" height="25" fill="#cc4444"/>
+              <rect x="170" y="135" width="60" height="25" fill="#dd5555"/>
+              <rect x="175" y="118" width="50" height="22" fill="#cc4444"/>
+              <polygon points="163,155 237,155 200,140" fill="#aa3333"/>
+              <polygon points="168,135 232,135 200,120" fill="#aa3333"/>
+            </svg>
+            <span class="dest-card__badge">Asia</span>
+          </div>
+          <div class="dest-card__body">
+            <h3 class="dest-card__title">Kyoto, Japan</h3>
+            <p class="dest-card__meta">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" fill="#2a9d8f"/></svg>
+              Cherry Blossoms · Temples · Zen
+            </p>
+            <p class="dest-card__desc">Japan's ancient capital offers incomparable cherry blossoms, Zen gardens, and timeless temples.</p>
+            <div class="dest-card__footer">
+              <span class="dest-card__price">From <strong>$849</strong></span>
+              <a href="#contact" class="btn btn--outline btn--sm">Book Now</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Europe -->
+        <article class="dest-card" data-category="europe">
+          <div class="dest-card__img">
+            <svg viewBox="0 0 400 260" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <defs>
+                <linearGradient id="skySant" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#1a78c2"/>
+                  <stop offset="100%" stop-color="#4db6f4"/>
+                </linearGradient>
+                <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#1e6fa8"/>
+                  <stop offset="100%" stop-color="#0d3d6e"/>
+                </linearGradient>
+              </defs>
+              <rect width="400" height="260" fill="url(#skySant)"/>
+              <!-- Sea -->
+              <rect x="0" y="180" width="400" height="80" fill="url(#sea)"/>
+              <!-- Cliff -->
+              <polygon points="0,260 0,140 150,100 250,110 400,90 400,260" fill="#c8b08a"/>
+              <!-- White buildings -->
+              <rect x="30" y="100" width="50" height="60" fill="white"/>
+              <rect x="90" y="90" width="60" height="70" fill="#f5f5f5"/>
+              <rect x="160" y="85" width="55" height="65" fill="white"/>
+              <rect x="225" y="75" width="65" height="75" fill="#f5f5f5"/>
+              <rect x="300" y="65" width="60" height="75" fill="white"/>
+              <!-- Blue domes -->
+              <ellipse cx="65" cy="100" rx="25" ry="15" fill="#1565c0"/>
+              <ellipse cx="120" cy="90" rx="22" ry="13" fill="#1565c0"/>
+              <ellipse cx="190" cy="85" rx="25" ry="14" fill="#1976d2"/>
+              <ellipse cx="258" cy="75" rx="28" ry="15" fill="#1565c0"/>
+              <ellipse cx="330" cy="65" rx="25" ry="14" fill="#1976d2"/>
+              <!-- Sun -->
+              <circle cx="340" cy="50" r="30" fill="#ffd54f" opacity="0.9"/>
+              <!-- Light reflection on water -->
+              <rect x="150" y="200" width="100" height="5" fill="white" opacity="0.2"/>
+              <rect x="160" y="210" width="80" height="4" fill="white" opacity="0.15"/>
+            </svg>
+            <span class="dest-card__badge">Europe</span>
+          </div>
+          <div class="dest-card__body">
+            <h3 class="dest-card__title">Santorini, Greece</h3>
+            <p class="dest-card__meta">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" fill="#2a9d8f"/></svg>
+              Blue Domes · Sunsets · Aegean Sea
+            </p>
+            <p class="dest-card__desc">Perched on volcanic cliffs, Santorini's white-washed villages and stunning sunsets are legendary.</p>
+            <div class="dest-card__footer">
+              <span class="dest-card__price">From <strong>$599</strong></span>
+              <a href="#contact" class="btn btn--outline btn--sm">Book Now</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Americas -->
+        <article class="dest-card" data-category="americas">
+          <div class="dest-card__img">
+            <svg viewBox="0 0 400 260" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <defs>
+                <linearGradient id="skyNY" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#0f0c29"/>
+                  <stop offset="60%" stop-color="#302b63"/>
+                  <stop offset="100%" stop-color="#24243e"/>
+                </linearGradient>
+              </defs>
+              <rect width="400" height="260" fill="url(#skyNY)"/>
+              <!-- Stars -->
+              <circle cx="50" cy="30" r="1" fill="white" opacity="0.7"/>
+              <circle cx="120" cy="20" r="1.2" fill="white" opacity="0.8"/>
+              <circle cx="250" cy="15" r="1" fill="white" opacity="0.7"/>
+              <circle cx="350" cy="25" r="1.2" fill="white" opacity="0.8"/>
+              <!-- Skyline -->
+              <rect x="0" y="140" width="30" height="120" fill="#1a1a2e"/>
+              <rect x="35" y="110" width="25" height="150" fill="#16213e"/>
+              <rect x="65" y="125" width="20" height="135" fill="#1a1a2e"/>
+              <rect x="90" y="95" width="35" height="165" fill="#16213e"/>
+              <rect x="130" y="80" width="15" height="180" fill="#1a1a2e"/>
+              <!-- Empire State Building -->
+              <rect x="150" y="60" width="40" height="200" fill="#0f3460"/>
+              <rect x="158" y="40" width="24" height="30" fill="#162447"/>
+              <rect x="164" y="20" width="12" height="25" fill="#1a2a52"/>
+              <line x1="170" y1="20" x2="170" y2="5" stroke="#e94560" stroke-width="2"/>
+              <!-- More buildings -->
+              <rect x="195" y="100" width="30" height="160" fill="#16213e"/>
+              <rect x="230" y="85" width="35" height="175" fill="#1a1a2e"/>
+              <rect x="270" y="110" width="28" height="150" fill="#16213e"/>
+              <rect x="303" y="95" width="32" height="165" fill="#1a1a2e"/>
+              <rect x="340" y="120" width="25" height="140" fill="#16213e"/>
+              <rect x="370" y="105" width="30" height="155" fill="#1a1a2e"/>
+              <!-- Windows (lit up) -->
+              <rect x="40" y="120" width="4" height="4" fill="#ffd700" opacity="0.8"/>
+              <rect x="48" y="120" width="4" height="4" fill="#ffd700" opacity="0.6"/>
+              <rect x="40" y="130" width="4" height="4" fill="#ffd700" opacity="0.7"/>
+              <rect x="95" y="105" width="4" height="4" fill="#ffd700" opacity="0.8"/>
+              <rect x="103" y="112" width="4" height="4" fill="#87ceeb" opacity="0.7"/>
+              <rect x="155" y="80" width="5" height="5" fill="#ffd700" opacity="0.9"/>
+              <rect x="165" y="75" width="5" height="5" fill="#87ceeb" opacity="0.8"/>
+              <rect x="175" y="80" width="5" height="5" fill="#ffd700" opacity="0.9"/>
+              <!-- Water at bottom -->
+              <rect x="0" y="220" width="400" height="40" fill="#0a1628" opacity="0.9"/>
+              <rect x="0" y="215" width="400" height="8" fill="#1a3a5c" opacity="0.7"/>
+            </svg>
+            <span class="dest-card__badge">Americas</span>
+          </div>
+          <div class="dest-card__body">
+            <h3 class="dest-card__title">New York City, USA</h3>
+            <p class="dest-card__meta">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" fill="#2a9d8f"/></svg>
+              Skyline · Broadway · Iconic
+            </p>
+            <p class="dest-card__desc">The city that never sleeps — packed with world-class dining, culture, and endless energy.</p>
+            <div class="dest-card__footer">
+              <span class="dest-card__price">From <strong>$549</strong></span>
+              <a href="#contact" class="btn btn--outline btn--sm">Book Now</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="destinations__more">
+        <a href="#contact" class="btn btn--outline btn--lg">View All Destinations</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ HOW IT WORKS ═════════════════════ -->
+  <section class="how-it-works section" id="how-it-works">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">Simple Process</p>
+        <h2 class="section-title">Plan Your Trip in 4 Easy Steps</h2>
+        <p class="section-desc">Booking your dream trip has never been easier. Here's how it works.</p>
+      </div>
+      <div class="steps">
+        <div class="step" data-aos>
+          <div class="step__number">01</div>
+          <div class="step__icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <circle cx="11" cy="11" r="8" stroke="#2a9d8f" stroke-width="2"/>
+              <path d="M21 21l-4.35-4.35" stroke="#2a9d8f" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Search a Destination</h3>
+          <p>Browse our curated list of 500+ destinations or search for your dream location.</p>
+        </div>
+        <div class="step__arrow" aria-hidden="true">
+          <svg width="40" height="24" viewBox="0 0 40 24" fill="none">
+            <path d="M0 12h36M28 4l8 8-8 8" stroke="#2a9d8f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="step" data-aos>
+          <div class="step__number">02</div>
+          <div class="step__icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="#2a9d8f" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="9" cy="7" r="4" stroke="#2a9d8f" stroke-width="2"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" stroke="#2a9d8f" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Choose Your Guide</h3>
+          <p>Pick from our verified network of passionate local guides with real traveler reviews.</p>
+        </div>
+        <div class="step__arrow" aria-hidden="true">
+          <svg width="40" height="24" viewBox="0 0 40 24" fill="none">
+            <path d="M0 12h36M28 4l8 8-8 8" stroke="#2a9d8f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="step" data-aos>
+          <div class="step__number">03</div>
+          <div class="step__icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <rect x="3" y="4" width="18" height="18" rx="2" stroke="#2a9d8f" stroke-width="2"/>
+              <path d="M16 2v4M8 2v4M3 10h18" stroke="#2a9d8f" stroke-width="2" stroke-linecap="round"/>
+              <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01M16 18h.01" stroke="#2a9d8f" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Book &amp; Customise</h3>
+          <p>Select your dates, group size, and personalise your itinerary to your heart's content.</p>
+        </div>
+        <div class="step__arrow" aria-hidden="true">
+          <svg width="40" height="24" viewBox="0 0 40 24" fill="none">
+            <path d="M0 12h36M28 4l8 8-8 8" stroke="#2a9d8f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="step" data-aos>
+          <div class="step__number">04</div>
+          <div class="step__icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#2a9d8f"/>
+            </svg>
+          </div>
+          <h3>Enjoy Your Journey</h3>
+          <p>Arrive and let your expert guide show you the best the destination has to offer.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════ TESTIMONIALS ══════════════════════ -->
+  <section class="testimonials section" id="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">What Travelers Say</p>
+        <h2 class="section-title">Stories from Our Community</h2>
+      </div>
+
+      <div class="testimonials__slider" id="testimonialsSlider">
+        <div class="testimonial-track" id="testimonialTrack">
+
+          <blockquote class="testimonial-card">
+            <div class="testimonial-card__stars" aria-label="5 out of 5 stars">
+              ★★★★★
+            </div>
+            <p>"Our guide in Kyoto was absolutely phenomenal. She knew every hidden temple and secret garden. The trip exceeded all our expectations — we'll definitely be back!"</p>
+            <footer>
+              <div class="testimonial-card__avatar" aria-hidden="true">S</div>
+              <div>
+                <cite>Sarah M.</cite>
+                <span>Kyoto, Japan</span>
+              </div>
+            </footer>
+          </blockquote>
+
+          <blockquote class="testimonial-card">
+            <div class="testimonial-card__stars" aria-label="5 out of 5 stars">
+              ★★★★★
+            </div>
+            <p>"Booking through GuidemanTourist was the best travel decision I've ever made. The Machu Picchu trek was perfectly organised and our guide was knowledgeable and fun."</p>
+            <footer>
+              <div class="testimonial-card__avatar" aria-hidden="true">J</div>
+              <div>
+                <cite>James T.</cite>
+                <span>Machu Picchu, Peru</span>
+              </div>
+            </footer>
+          </blockquote>
+
+          <blockquote class="testimonial-card">
+            <div class="testimonial-card__stars" aria-label="5 out of 5 stars">
+              ★★★★★
+            </div>
+            <p>"We used the platform for our family trip to Santorini. The custom itinerary was perfect for our kids and adults alike. The sunset dinner recommendations were unforgettable."</p>
+            <footer>
+              <div class="testimonial-card__avatar" aria-hidden="true">A</div>
+              <div>
+                <cite>Anna &amp; Mark K.</cite>
+                <span>Santorini, Greece</span>
+              </div>
+            </footer>
+          </blockquote>
+
+          <blockquote class="testimonial-card">
+            <div class="testimonial-card__stars" aria-label="5 out of 5 stars">
+              ★★★★★
+            </div>
+            <p>"The Paris guide took us to local bistros and art galleries we'd never have found on our own. A completely authentic experience away from the tourist crowds. Loved it!"</p>
+            <footer>
+              <div class="testimonial-card__avatar" aria-hidden="true">L</div>
+              <div>
+                <cite>Laura D.</cite>
+                <span>Paris, France</span>
+              </div>
+            </footer>
+          </blockquote>
+
+        </div>
+      </div>
+
+      <div class="testimonials__controls" aria-label="Testimonial navigation">
+        <button class="slider-btn" id="sliderPrev" aria-label="Previous testimonial">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div class="slider-dots" id="sliderDots" role="tablist" aria-label="Testimonials">
+          <button class="dot active" role="tab" aria-selected="true" aria-label="Testimonial 1"></button>
+          <button class="dot" role="tab" aria-selected="false" aria-label="Testimonial 2"></button>
+          <button class="dot" role="tab" aria-selected="false" aria-label="Testimonial 3"></button>
+          <button class="dot" role="tab" aria-selected="false" aria-label="Testimonial 4"></button>
+        </div>
+        <button class="slider-btn" id="sliderNext" aria-label="Next testimonial">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════ CTA BANNER ════════════════════════ -->
+  <section class="cta-banner">
+    <div class="container cta-banner__inner">
+      <div class="cta-banner__text">
+        <h2>Ready to Start Your Adventure?</h2>
+        <p>Join over 50,000 happy travelers and experience the world with a trusted local guide.</p>
+      </div>
+      <a href="#contact" class="btn btn--white btn--lg">Plan My Trip</a>
+    </div>
+  </section>
+
+  <!-- ══════════════════════ CONTACT ═════════════════════════ -->
+  <section class="contact section" id="contact">
+    <div class="container contact__grid">
+      <div class="contact__info">
+        <p class="section-eyebrow">Get in Touch</p>
+        <h2 class="section-title">Start Planning Today</h2>
+        <p>Fill in the form and our travel experts will craft a personalised itinerary just for you — for free.</p>
+        <ul class="contact__list">
+          <li>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.72 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.63 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.78a16 16 0 0 0 6.31 6.31l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.04z" stroke="#2a9d8f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>+1 (800) 123-TOUR</span>
+          </li>
+          <li>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="#2a9d8f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <polyline points="22,6 12,13 2,6" stroke="#2a9d8f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>hello@guidemantourist.com</span>
+          </li>
+          <li>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <circle cx="12" cy="12" r="10" stroke="#2a9d8f" stroke-width="2"/>
+              <path d="M12 6v6l4 2" stroke="#2a9d8f" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <span>Mon – Fri, 9 AM – 8 PM (EST)</span>
+          </li>
+        </ul>
+      </div>
+
+      <form class="contact__form" id="contactForm" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="firstName">First Name <span aria-hidden="true">*</span></label>
+            <input type="text" id="firstName" name="firstName" required autocomplete="given-name" placeholder="John" />
+            <span class="form-error" id="firstNameError" role="alert"></span>
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name <span aria-hidden="true">*</span></label>
+            <input type="text" id="lastName" name="lastName" required autocomplete="family-name" placeholder="Doe" />
+            <span class="form-error" id="lastNameError" role="alert"></span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address <span aria-hidden="true">*</span></label>
+          <input type="email" id="email" name="email" required autocomplete="email" placeholder="john@example.com" />
+          <span class="form-error" id="emailError" role="alert"></span>
+        </div>
+        <div class="form-group">
+          <label for="destination">Destination of Interest</label>
+          <select id="destination" name="destination">
+            <option value="">Select a destination…</option>
+            <option value="asia">Asia</option>
+            <option value="europe">Europe</option>
+            <option value="americas">Americas</option>
+            <option value="other">Other / Not sure yet</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Tell Us About Your Trip <span aria-hidden="true">*</span></label>
+          <textarea id="message" name="message" required rows="4" placeholder="Dates, group size, interests…"></textarea>
+          <span class="form-error" id="messageError" role="alert"></span>
+        </div>
+        <button type="submit" class="btn btn--primary btn--full">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <line x1="22" y1="2" x2="11" y2="13" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            <polygon points="22 2 15 22 11 13 2 9 22 2" stroke="white" stroke-width="2" stroke-linejoin="round" fill="none"/>
+          </svg>
+          Send Message
+        </button>
+        <p class="form-success" id="formSuccess" role="status" aria-live="polite" hidden>
+          ✅ Thank you! We'll be in touch within 24 hours.
+        </p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ FOOTER ════════════════════════ -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <a href="#" class="navbar__logo footer__logo">
+          <svg width="28" height="28" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+            <circle cx="16" cy="16" r="16" fill="#2a9d8f"/>
+            <path d="M16 7C11.03 7 7 11.03 7 16s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9zm0 2c.96 0 1.88.17 2.74.48L10.48 17.74A6.96 6.96 0 0 1 9 16c0-3.86 3.14-7 7-7zm0 14c-.96 0-1.88-.17-2.74-.48l8.26-8.26c.31.86.48 1.78.48 2.74 0 3.86-3.14 7-7 7z" fill="white"/>
+          </svg>
+          <span>GuidemanTourist</span>
+        </a>
+        <p>Your trusted companion for unforgettable journeys across the globe.</p>
+        <div class="footer__social">
+          <a href="#" aria-label="Facebook">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+            </svg>
+          </a>
+          <a href="#" aria-label="Twitter / X">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
+            </svg>
+          </a>
+          <a href="#" aria-label="Instagram">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/>
+            </svg>
+          </a>
+          <a href="#" aria-label="YouTube">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.95C18.88 4 12 4 12 4s-6.88 0-8.59.47A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.95C5.12 20 12 20 12 20s6.88 0 8.59-.47a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/>
+              <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer__links">
+        <h4>Destinations</h4>
+        <ul>
+          <li><a href="#destinations">Asia</a></li>
+          <li><a href="#destinations">Europe</a></li>
+          <li><a href="#destinations">Americas</a></li>
+          <li><a href="#destinations">Middle East</a></li>
+          <li><a href="#destinations">Africa</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__links">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#features">About Us</a></li>
+          <li><a href="#how-it-works">How It Works</a></li>
+          <li><a href="#testimonials">Reviews</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__links">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#">Help Center</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Cookie Policy</a></li>
+          <li><a href="#">Sitemap</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <div class="container">
+        <p>&copy; <span id="currentYear"></span> GuidemanTourist. All rights reserved.</p>
+        <p>Made with ♥ for travelers everywhere.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M18 15l-6-6-6 6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
