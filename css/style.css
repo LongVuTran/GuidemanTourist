@@ -255,10 +255,21 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   inset: 0;
   z-index: 0;
 }
-.hero__bg svg {
+.hero__bg-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
+}
+.hero__bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(5, 15, 30, 0.55) 0%,
+    rgba(5, 15, 30, 0.35) 50%,
+    rgba(5, 15, 30, 0.65) 100%
+  );
 }
 
 .hero__content {
@@ -354,6 +365,21 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   width: 1px;
   height: 40px;
   background: rgba(255,255,255,.25);
+}
+
+.hero__intro {
+  max-width: 620px;
+  border-left: 3px solid var(--color-primary);
+  padding-left: 18px;
+}
+.hero__intro-text {
+  font-size: 1rem;
+  color: rgba(255,255,255,.82);
+  line-height: 1.8;
+}
+.hero__intro-highlight {
+  color: var(--color-primary);
+  font-weight: 700;
 }
 
 .hero__scroll {
@@ -521,6 +547,14 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   transition: transform 0.4s ease;
 }
 .dest-card:hover .dest-card__img svg { transform: scale(1.04); }
+.dest-card__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+.dest-card:hover .dest-card__img img { transform: scale(1.04); }
 
 .dest-card__badge {
   position: absolute;
@@ -636,6 +670,80 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   flex-shrink: 0;
   opacity: .45;
   margin-top: 48px;
+}
+
+/* ── Da Nang Experiences ──────────────────────────────────── */
+.experiences { background: var(--color-bg); }
+
+.experiences__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 28px;
+}
+
+.exp-card {
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  border: 1.5px solid var(--color-border);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.exp-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-xl);
+}
+.exp-card__img {
+  height: 240px;
+  overflow: hidden;
+}
+.exp-card__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+.exp-card:hover .exp-card__img img { transform: scale(1.04); }
+.exp-card__body { padding: 24px; }
+.exp-card__body h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-dark);
+  margin-bottom: 10px;
+}
+.exp-card__body p {
+  color: var(--color-text-light);
+  margin-bottom: 18px;
+  line-height: 1.7;
+}
+
+/* ── Gallery ──────────────────────────────────────────────── */
+.gallery { background: var(--color-dark); }
+.gallery .section-eyebrow,
+.gallery .section-desc { color: rgba(255,255,255,.6); }
+.gallery .section-title { color: var(--color-white); }
+
+.gallery__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+.gallery__item {
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+}
+.gallery__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease, opacity 0.3s ease;
+}
+.gallery__item:hover img {
+  transform: scale(1.06);
+  opacity: .9;
 }
 
 /* ── Testimonials ─────────────────────────────────────────── */
@@ -1076,4 +1184,9 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .destinations__tabs { gap: 6px; }
   .tab { padding: 8px 16px; font-size: .8125rem; }
   .testimonials__slider { margin-inline: -1rem; padding-inline: 1rem; }
+  .gallery__grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .gallery__grid { grid-template-columns: repeat(2, 1fr); }
 }
